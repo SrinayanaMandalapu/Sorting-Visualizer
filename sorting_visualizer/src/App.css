@@ -1,0 +1,164 @@
+@font-face {
+	font-family: mono;
+	src: url('./fonts/MonoLisa-Regular.otf');
+}
+
+.App {
+	text-align: center;
+}
+
+.control-buttons {
+    display: flex; /* Align buttons in a row */
+    justify-content: center; /* Center buttons horizontally */
+    align-items: center; /* Align buttons vertically */
+    gap: 10px; /* Space between buttons */
+    margin-top: 20px; /* Add some space above the button group */
+}
+
+.controller {
+    background-color: #007bff; /* Primary button color */
+    color: white; /* Button text color */
+    border: none; /* Remove default borders */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Button size */
+    font-size: 16px; /* Text size */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    display: flex; /* Ensures icons and text are aligned */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.controller:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow */
+}
+
+.controller:active {
+    background-color: rgb(46, 46, 123); /* Even darker shade when clicked */
+    transform: scale(0.95); /* Button slightly shrinks on click */
+}
+
+.controller:disabled {
+    background-color: #c0c0c0; /* Gray color for disabled buttons */
+    cursor: not-allowed; /* Indicate non-interactive state */
+    box-shadow: none; /* Remove shadow for disabled buttons */
+}
+
+
+body {
+	font-family: 'Arial', sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f4f4f9;
+	color: #333;
+}
+
+/* Page title */
+.page-header_title {
+	text-align: center;
+	margin: 20px 0;
+	font-size: 24px;
+	color: #333;
+}
+
+.risetext {
+    font-size: 2.5rem; /* Adjust size as needed */
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Start slightly below its final position */
+    animation: rise 1s ease-out forwards; /* Animate into position */
+}
+
+/* Keyframes for the rise effect */
+@keyframes rise {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Start below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End in its final position */
+    }
+}
+
+/* Layout styles */
+.layout {
+	display: flex;
+	align-items: flex-start; /* Align content to the top */
+	justify-content: space-between; /* Push content to the sides */
+	padding: 20px;
+}
+
+/* Left pannel (Dropdowns) */
+.pannel {
+	flex: 1; /* Adjust width for the left panel */
+	max-width: 300px; /* Ensure the panel doesn't grow too wide */
+	margin-right: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 15px; /* Space between dropdowns */
+	background: #ffffff;
+	border-radius: 8px;
+	padding: 15px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Individual form-group */
+.form-group label {
+	font-weight: bold;
+	font-size: 14px;
+	margin-bottom: 5px;
+	color: #555;
+	display: block;
+}
+
+.form-group select {
+	padding: 10px;
+	font-size: 14px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background-color: #fff;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
+	width: 100%;
+}
+
+.form-group select:focus {
+	border-color: #007bff;
+	box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+	outline: none;
+}
+
+/* Bars (right side) */
+.barsDiv {
+	flex: 3; /* Adjust width for the right panel */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	background: #e6e6fa;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+	.layout {
+		flex-direction: column; /* Stack elements vertically on small screens */
+		align-items: center;
+	}
+
+	.pannel {
+		margin-right: 0;
+		margin-bottom: 20px;
+		width: 100%;
+	}
+
+	.barsDiv {
+		width: 100%;
+	}
+}
